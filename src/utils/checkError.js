@@ -1,4 +1,4 @@
-import users from "../data/users";
+import users from "../data/users.js";
 
 const validateEmail = (email) => {
   return String(email)
@@ -25,9 +25,9 @@ const checkError = ({
     password: "",
   };
 
-  const user = users.find((el) => {
-    el.username === username;
-  });
+  const user = users.find((el) => 
+    el.username === username
+  );
 
   if (username.length < 3 && register) {
     error.username = "Username must have at least three(3) characters";
@@ -35,7 +35,7 @@ const checkError = ({
   if (!username && login) {
     error.username = "Username cannot be empty";
   }
-  if (username && user && register) {
+  if (username && user  && register) {
     error.username = "Username is already in use"
   }
   if (!firstName) {
