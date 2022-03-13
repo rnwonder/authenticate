@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken"
 
-// takes 3 parameters user obj, jsonwebtoken secret and options
 export const generateToken = (user) => {
     return jwt.sign({
         id: user.id,
