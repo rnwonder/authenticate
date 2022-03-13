@@ -7,7 +7,7 @@ const users = [
         firstName: "Ruona",
         lastName: "Matthew",
         password: bcrypt.hashSync("123456", 8),
-        id: "sjahsags67a6s"
+        id: "sjahsags6mm7a6s"
     }
 ]
 
