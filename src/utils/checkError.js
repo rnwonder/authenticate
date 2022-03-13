@@ -1,3 +1,5 @@
+import users from "../data/users";
+
 const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
@@ -23,11 +25,18 @@ const checkError = ({
     password: "",
   };
 
+  const user = users.find((el) => {
+    el.username === username;
+  });
+
   if (username.length < 3 && register) {
     error.username = "Username must have at least three(3) characters";
   }
   if (!username && login) {
     error.username = "Username cannot be empty";
+  }
+  if (username && user && register) {
+    error.username = "Username is already in use"
   }
   if (!firstName) {
     error.firstName = "First name cannot be empty";
@@ -59,7 +68,7 @@ const checkError = ({
     };
   }
 
-  return null
+  return null;
 };
 
-export default checkError
+export default checkError;
